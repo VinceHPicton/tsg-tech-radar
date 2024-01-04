@@ -3,7 +3,7 @@
 	<g 
 				xmlns="http://www.w3.org/2000/svg"
 				:transform="generateTransformInstruction()">
-	<template v-for="s in sectors">
+	<template v-for="s in sectorAngles">
 		<path
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
@@ -26,12 +26,12 @@
 	const props = defineProps(['sectors', 'width', 'height']);
 	let width = inject('width');
 	let height = inject('height');
-	let sectorCount = inject('sectors');
+	let sectors = inject('sectors');
 
 	let minSize = Math.min(width, height);
 	let rings = [32, 54, 78, 99].map(x => x / 200 * minSize);
-	let sectors = Array.from({length: sectorCount}, (x, i) => i)
-		.map(x => x / sectorCount * (2 * Math.PI));
+	let sectorAngles = Array.from({length: sectors.length}, (x, i) => i)
+		.map(x => x / sectors.length * (2 * Math.PI));
 
 	function generateSectorPath(theta) {
 		let first_ring = rings[0];

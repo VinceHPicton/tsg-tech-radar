@@ -13,9 +13,9 @@
 
 <script setup>
 	let props = defineProps(['size', 'sectors', 'blips']);
-	provide('width', props.size);
-	provide('height', props.size);
-	provide('sectors', props.sectors);
+	provide('width', props.size);      // width 
+	provide('height', props.size);     // height
+	provide('sectors', props.sectors); // List of sectors, represented by their printed names
 </script>
 
 <style>
