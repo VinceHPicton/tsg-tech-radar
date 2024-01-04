@@ -24,11 +24,14 @@
 
 <script setup>
 	const props = defineProps(['sectors', 'width', 'height']);
+	let width = inject('width');
+	let height = inject('height');
+	let sectorCount = inject('sectors');
 
-	let minSize = Math.min(props.width, props.height);
+	let minSize = Math.min(width, height);
 	let rings = [32, 54, 78, 99].map(x => x / 200 * minSize);
-	let sectors = Array.from({length: props.sectors}, (x, i) => i)
-		.map(x => x / props.sectors * (2 * Math.PI));
+	let sectors = Array.from({length: sectorCount}, (x, i) => i)
+		.map(x => x / sectorCount * (2 * Math.PI));
 
 	function generateSectorPath(theta) {
 		let first_ring = rings[0];
@@ -41,7 +44,7 @@
 
 	}
 	function generateTransformInstruction() {
-		return `translate(${props.width / 2}, ${props.height / 2})`
+		return `translate(${width / 2}, ${height / 2})`
 
 	}
 </script>

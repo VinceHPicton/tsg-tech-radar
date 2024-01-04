@@ -20,8 +20,10 @@
 </template>
 
 <script setup>
-	let props = defineProps(['width', 'height', 'x', 'y',  'color', 'text']);
-	let minSize = Math.min(props.width, props.height);
+	let props = defineProps(['x', 'y',  'color', 'text']);
+	let width = inject('width');
+	let height = inject('height');
+	let minSize = Math.min(width, height);
 	let blipRadius = minSize / 50;
 	let isVisible = ref("hidden");
 
