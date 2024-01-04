@@ -3,6 +3,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     'Radar': typeof import("../components/Radar.vue")['default']
     'RadarBackground': typeof import("../components/RadarBackground.vue")['default']
+    'RadarBlip': typeof import("../components/RadarBlip.vue")['default']
     'TechnologyDetail': typeof import("../components/TechnologyDetail.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -26,6 +27,7 @@ declare module 'vue' {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyRadar': typeof import("../components/Radar.vue")['default']
     'LazyRadarBackground': typeof import("../components/RadarBackground.vue")['default']
+    'LazyRadarBlip': typeof import("../components/RadarBlip.vue")['default']
     'LazyTechnologyDetail': typeof import("../components/TechnologyDetail.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -52,6 +54,7 @@ declare module 'vue' {
 
 export const Radar: typeof import("../components/Radar.vue")['default']
 export const RadarBackground: typeof import("../components/RadarBackground.vue")['default']
+export const RadarBlip: typeof import("../components/RadarBlip.vue")['default']
 export const TechnologyDetail: typeof import("../components/TechnologyDetail.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -75,6 +78,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyRadar: typeof import("../components/Radar.vue")['default']
 export const LazyRadarBackground: typeof import("../components/RadarBackground.vue")['default']
+export const LazyRadarBlip: typeof import("../components/RadarBlip.vue")['default']
 export const LazyTechnologyDetail: typeof import("../components/TechnologyDetail.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
