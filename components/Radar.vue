@@ -13,9 +13,10 @@
 
 <script setup>
 	let props = defineProps(['size', 'sectors', 'blips']);
-	provide('width', props.size);      // width 
-	provide('height', props.size);     // height
-	provide('sectors', props.sectors); // List of sectors, represented by their printed names
+	provide('width', props.size);       // width 
+	provide('height', props.size);      // height
+	provide('sectors', props.sectors);  // List of sectors, represented by their printed names
+	provide('rings', [32, 54, 78, 99]); // Percentages of where the rings are. Don't touch this
 </script>
 
 <style>

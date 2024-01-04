@@ -29,7 +29,7 @@
 	let sectors = inject('sectors');
 
 	let minSize = Math.min(width, height);
-	let rings = [32, 54, 78, 99].map(x => x / 200 * minSize);
+	let rings = inject('rings').map(x => x / 200 * minSize);
 	let sectorAngles = Array.from({length: sectors.length}, (x, i) => i)
 		.map(x => x / sectors.length * (2 * Math.PI));
 
