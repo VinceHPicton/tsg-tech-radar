@@ -24,7 +24,7 @@
 	let width = inject('width');
 	let height = inject('height');
 	let minSize = Math.min(width, height);
-	let blipRadius = minSize / 50;
+	let blipRadius = minSize / 60;
 	let isVisible = ref("hidden");
 
 	function move() {

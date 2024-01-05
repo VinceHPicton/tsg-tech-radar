@@ -16,7 +16,25 @@
 	provide('width', props.size);       // width 
 	provide('height', props.size);      // height
 	provide('sectors', props.sectors);  // List of sectors, represented by their printed names
-	provide('rings', [32, 54, 78, 99]); // Percentages of where the rings are. Don't touch this
+	provide('rings', [30, 48, 64, 82]); // Percentages of where the rings are. Don't touch this
+	
+	// Will be used to place blips properly
+	function createBlipGroups() {
+		let blipGroups = [
+			Array.from({length: sectors.length}, () => []),
+			Array.from({length: sectors.length}, () => []),
+			Array.from({length: sectors.length}, () => []),
+			Array.from({length: sectors.length}, () => []),
+		]
+		props.blips.forEach(b => {
+			blipGroups[b.ring][b.sector].push(b);
+		});
+
+	}
+
+	function addBlips() {
+
+	}
 </script>
 
 <style>
