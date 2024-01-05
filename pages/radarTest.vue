@@ -7,22 +7,44 @@
 	//let sectors = ["A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"];
 	let blips = [
 	{
-	x: '80',
-	y: '70',
-	ring: '0', // 0 = inner, increase = further out
-	sector: '1', // Start at bottom, move counterclockwise
+	ring: 0, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
 	color: 'lightblue',
 	text: 'Something'
 	},
 	{
-	x: '100',
-	y: '100',
+	ring: 1, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
 	color: 'lightblue',
 	text: 'Something'
 	},
 	{
-	x: '250',
-	y: '70',
+	ring: 2, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
+	color: 'lightblue',
+	text: 'Something'
+	},
+	{
+	ring: 3, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
+	color: 'lightblue',
+	text: 'Something'
+	},
+	{
+	ring: 0, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
+	color: 'lightblue',
+	text: 'Something'
+	},
+	{
+	ring: 0, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
+	color: 'lightblue',
+	text: 'Something'
+	},
+	{
+	ring: 0, // 0 = inner, increase = further out
+	sector: 0, // Start at bottom, move counterclockwise
 	color: 'lightblue',
 	text: 'Something'
 	},
