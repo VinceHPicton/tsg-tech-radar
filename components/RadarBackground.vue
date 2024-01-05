@@ -2,7 +2,7 @@
 	<!-- Ignore vue errors about custom elements and x-invalid-namespace -->
 	<g 
 				xmlns="http://www.w3.org/2000/svg"
-				:transform="generateTransformInstruction()">
+				:transform="move()">
 	<template v-for="s in sectorAngles">
 		<path
 				xmlns="http://www.w3.org/2000/svg"
@@ -41,11 +41,9 @@
 		let to_last_x = (last_ring - first_ring) * Math.cos(theta);
 		let to_last_y = (last_ring - first_ring) * Math.sin(theta);
 		return `m ${to_first_x} ${to_first_y} l ${to_last_x} ${to_last_y}`;
-
 	}
-	function generateTransformInstruction() {
+	function move() {
 		return `translate(${width / 2}, ${height / 2})`
-
 	}
 </script>
 
