@@ -1,8 +1,13 @@
 <template>
     <h1>List of technologies</h1>
-    <TechnologyDetail
-        v-model="showDialog"
-    ></TechnologyDetail>
+        <TechnologyDetail 
+        v-model="showDetailDialog"
+        title="test"
+        @click:outside="showDetailDialog = false"
+        >
+            <h1>test slot</h1>
+            <button @click="showDetailDialog = false">Close</button>
+        </TechnologyDetail>
 
     <div v-for="i in issuesResp.issues">
         <NuxtLink :to="`/issues/${i.key}`">{{ i.fields.summary }}</NuxtLink>
@@ -21,6 +26,7 @@
 </template>
     
 <script setup>
+
 const { data: issuesResp } = await useFetch('https://click-app.atlassian.net/rest/api/3/search?jql=project=TTR AND issuetype=Task&fields=summary,status,parent', {headers: { 
                 'Authorization': 'Basic dmluY2UucGljdG9uQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjB5NHZXYndUb0NTQU9na1dyRmwyTzI4UHdVd1pNRjRsYXVBOUdUT0xmbkxMd1hHZWtVLXBIWTZ3VmVmMHgzQzU4bEI3enZsTnBxTEdmTm8wQkFvdXJzZElWT1dmLS1tNlhOYWVER0pRN0VlTG1ZLTVRRWE0TWJOalVGVGhHcnpOLUFxbWd0NWZJXzVIVjJxYkJCNFpzTGxDalFMa0d0bm9wc3pubk1iR3g3X3M9RTgzMzYyQzQ=',
             }})
@@ -29,10 +35,10 @@ const { data: epics } = await useFetch('https://click-app.atlassian.net/rest/api
                 'Authorization': 'Basic dmluY2UucGljdG9uQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjB5NHZXYndUb0NTQU9na1dyRmwyTzI4UHdVd1pNRjRsYXVBOUdUT0xmbkxMd1hHZWtVLXBIWTZ3VmVmMHgzQzU4bEI3enZsTnBxTEdmTm8wQkFvdXJzZElWT1dmLS1tNlhOYWVER0pRN0VlTG1ZLTVRRWE0TWJOalVGVGhHcnpOLUFxbWd0NWZJXzVIVjJxYkJCNFpzTGxDalFMa0d0bm9wc3pubk1iR3g3X3M9RTgzMzYyQzQ=',
             }})
 
-let showDialog = true
+let showDetailDialog = ref(true)
 
 const closeDialog = () => {
-    showDialog = false
+    showDetailDialog = false
 }
 </script>
     

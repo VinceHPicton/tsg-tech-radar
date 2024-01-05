@@ -1,39 +1,47 @@
 <template>
-    <v-dialog
-        width="auto"
-        v-model="show"
-    >
-        <v-card>
-        <v-card-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </v-card-text>
-        <v-card-actions>
-            <v-btn color="primary" block @click.stop="show = false">Close Dialog</v-btn>
-        </v-card-actions>
+  <v-dialog class="popup" v-on="$listeners" v-bind="$attrs">
+    <v-card>
+        <v-fade-transition mode="out-in">
+            <v-container v-if="!submitClicked" key="slot">
+                <v-card-title class="d-flex align-center justify-center dialog-headings pb-1" v-if="title">{{ title }}</v-card-title>
+                <slot></slot>
+            </v-container>
+
+            <v-container v-else key="spinnerWheel" style="overflow-y:hidden; text-align: center;">
+                <v-progress-circular
+                    :size="80"
+                    color="primary"
+                    indeterminate
+                ></v-progress-circular>
+            </v-container>
+        </v-fade-transition>
         </v-card>
-    </v-dialog>
-  </template>
+  </v-dialog>
+</template>
   
 
 <script>
   export default {
     data () {
       return {
-        dialog: false,
+
       }
     },
     props: {
-      value: Boolean
-    },
-    computed: {
-      show: {
-        get () {
-          return this.value
+        submitClicked: {
+            type: Boolean,
+            required: false,
+            default: false
         },
-        set (value) {
-          this.$emit('input', value)
+        maxWidth: {
+            type: Number,
+            required: false,
+            default: 600
+        },
+        title: {
+            type: String,
+            required: false
         }
-      }
     }
   }
 </script>
